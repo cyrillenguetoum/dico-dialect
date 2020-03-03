@@ -1,2 +1,2 @@
-Copyright (c) 2019, Laminas Foundation.
-All rights reserved. (https://getlaminas.org/)
+Copyright (c) 2019, NGUETOUM N. Cyrille.
+All rights reserved. (nguetoum@gmail.com)

@@ -13,7 +13,6 @@ services:
             - .docker/nginx/nginx.conf:/etc/nginx/nginx.conf
             - .docker/nginx/sites/:/etc/nginx/sites-available
             - .docker/nginx/conf.d/:/etc/nginx/conf.d
-        container_name: nginx-dico
         depends_on:
             - php-fpm
         networks:
@@ -25,7 +24,6 @@ services:
         restart: unless-stopped
         volumes:
             - ./:/var/www/dico
-        container_name: php-fpm
         working_dir: "/var/www/dico"
         networks:
             - app-network
@@ -38,9 +36,8 @@ services:
             - .docker/dbdata:/var/lib/mysql
             - .docker/db/my.cnf:/etc/mysql/my.cnf
         environment:
-            - MYSQL_DATABASE=ngyemboon
-            - MYSQL_ROOT_PASSWORD=Secur1ty
-        container_name: db
+            - MYSQL_DATABASE=XXXXXXXX
+            - MYSQL_ROOT_PASSWORD=XXXXXXXXXX
         networks:
             - app-network
 

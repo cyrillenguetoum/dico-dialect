@@ -4,7 +4,7 @@ return [
         'connection' => [
             'orm_default' => [
                 'params' => [
-                    'url' => 'mysql://your_username:your_password@db/database',
+                    'url' => 'mysql://your_username:your_password@db/your_database',
                 ],
             ],
         ],
