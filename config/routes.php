@@ -20,4 +20,7 @@ use Psr\Container\ContainerInterface;
  * $app->route('/contact', App\Handler\ContactHandler::class, ['GET', 'POST', ...], 'contact');
  */
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
+    $app->get('/', App\Handler\IndexHandler::class, 'home');
+    $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
+    $app->get('/api/entries[/{id}]', App\Handler\EntryHandler::class, 'api.entries');
 };
