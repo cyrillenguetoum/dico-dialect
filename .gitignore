@@ -1,5 +1,5 @@
 /clover.xml
 /coveralls-upload.json
 /phpunit.xml
-/docker-compose.yml
+*.yml
 /vendor/

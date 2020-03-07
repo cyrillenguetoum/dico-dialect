@@ -59,7 +59,9 @@ CREATE TABLE `Entry` (
 
 INSERT INTO `Entry` (`id`, `word`, `typology`, `definition`) VALUES
 (1,	'mekan',	'n.c., plur.',	'Plats, couvert'),
-(2,	'Kandon',	'n.c., sing',	'Doigt de Plantain, Pied de plantain, Regime de plantain');
+(2,	'Kandon',	'n.c., sing',	'Doigt de Plantain, Pied de plantain, Regime de plantain'),
+(3,	'lekan',	'n.c., sing',	'Sorcellerie, Pratiques douteuses'),
+(4,	'spoon',	'n.c., sing',	'Cuillere, Fait partie de la vaisselle, Cf mekan.');
 ```
 
 ## Testing
