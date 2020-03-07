@@ -49,8 +49,8 @@ class EntryHandler implements RequestHandlerInterface
     {
         $page = $request->getQueryParams()['page'] ?? 1;
         $entries = $this->repository->findAll();
-        //$entries->setItemCountPerPage(5);
-        //$entries->setCurrentPageNumber($page);
+        $entries->setItemCountPerPage(5);
+        $entries->setCurrentPageNumber($page);
         return $this->createResponse($request, $entries);
     }
 }

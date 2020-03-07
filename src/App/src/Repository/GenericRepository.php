@@ -26,10 +26,16 @@ abstract class GenericRepository
         $this->entity = $entity;
     }
 
-    // Gets all the entities objects saved in database
-    public function findAll()
+    /**
+     * Gets all the entities objects saved in database
+     * Either in an array or encapsulated in a paginator
+     */
+    public function findAll($raw = false)
     {
         $entities = $this->em->getRepository($this->entity)->findAll();
+        if ($raw === true) {
+            return $entities;
+        }
         $adapter = new ArrayAdapter($entities);
         $paginator = new EntryCollection($adapter);
         return $paginator;

@@ -24,6 +24,10 @@ Navigate through command line into the project directory (dico), then Download a
 ```bash
 composer install
 ```
+Now Create a copy of the file 'docker-compose.yml.dist' and rename it into 'docker-compose.yml' in the root folder of the project. Open it and edit the line containing: '- MYSQL_ROOT_PASSWORD=XXXX' replacing the XXXX with a password of your one. Replace the XXXXX in the line container 'MYSQL_DATABASE=XXXXX' with any string you want to be the name of the database persisting datas.
+
+We're almost done. Create a copy of the file 'config/autoload/doctrine.local.php.dist' and rename it by removing the .dist extension. Open the file and edit the line containing "'url' => 'mysql://your_username:your_password@db/database'" by replacing your_username with 'root', 'your_password' and 'your_database' with the password and database name you provided during the editing of the docker-compose.yml file. After editing the file rename it by removing the .dist extension. That's all.
+
 Once the installation is finished then launch the project with this command:
 ```bash
 docker-compose up
@@ -34,10 +38,6 @@ docker-compose up
 > that everything worked as expected. You should see the UI of adminer a well known alternative to
 > PHPmyAdmin for administering databases. The url of our API is located at 'http://localhost:80',
 > but don't consult it for now since we need additional configuration for everything to work properly.
-
-Now Create a copy of the file 'docker-compose.yml.dist' and rename it into 'docker-compose.yml' in the root folder of the project. Open it and edit the line containing: '- MYSQL_ROOT_PASSWORD=XXXX' replacing the XXXX with a password of your one. Replace the XXXXX in the line container 'MYSQL_DATABASE=XXXXX' with any string you want to be the name of the database persisting datas.
-
-We're almost done. Create a copy of the file 'config/autoload/doctrine.local.php.dist' and rename it by removing the .dist extension. Open the file and edit the line containing "'url' => 'mysql://your_username:your_password@db/database'" by replacing your_username with 'root', 'your_password' and 'your_database' with the password and database name you provided during the editing of the docker-compose.yml file. After editing the file rename it by removing the .dist extension. That's all.
 
 ## Configuring the database
 

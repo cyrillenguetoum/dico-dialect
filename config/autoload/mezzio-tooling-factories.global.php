@@ -7,16 +7,14 @@
  * removing factory definitions; other dependency types may be overwritten
  * when regenerating this file via mezzio-tooling commands.
  */
-
+ 
 declare(strict_types=1);
 
 return [
     'dependencies' => [
         'factories' => [
             App\Handler\EntryHandler::class => App\Handler\EntryHandlerFactory::class,
-        ],
-        'invokables' => [
-            App\Handler\IndexHandler::class => App\Handler\IndexHandler::class,
+            App\Handler\SearchHandler::class => App\Handler\SearchHandlerFactory::class,
         ],
     ],
 ];

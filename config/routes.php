@@ -23,4 +23,5 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->get('/', App\Handler\IndexHandler::class, 'home');
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
     $app->get('/api/entries[/{id}]', App\Handler\EntryHandler::class, 'api.entries');
+    $app->get('/api/search', App\Handler\SearchHandler::class, 'api.search');
 };

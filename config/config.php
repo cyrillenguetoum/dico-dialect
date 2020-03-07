@@ -13,6 +13,7 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    \Search\ConfigProvider::class,
     \Laminas\Paginator\ConfigProvider::class,
     \Mezzio\Hal\ConfigProvider::class,
     \Mezzio\Authentication\OAuth2\ConfigProvider::class,
