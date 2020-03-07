@@ -1,4 +1,6 @@
 *
+!search
+!search/.gitkeep
 !cache
 !cache/.gitkeep
 !.gitignore

@@ -26,9 +26,9 @@ composer install
 ```
 Now Create a copy of the file 'docker-compose.yml.dist' and rename it into 'docker-compose.yml' in the root folder of the project. Open it and edit the line containing: '- MYSQL_ROOT_PASSWORD=XXXX' replacing the XXXX with a password of your one. Replace the XXXXX in the line container 'MYSQL_DATABASE=XXXXX' with any string you want to be the name of the database persisting datas.
 
-We're almost done. Create a copy of the file 'config/autoload/doctrine.local.php.dist' and rename it by removing the .dist extension. Open the file and edit the line containing "'url' => 'mysql://your_username:your_password@db/database'" by replacing your_username with 'root', 'your_password' and 'your_database' with the password and database name you provided during the editing of the docker-compose.yml file. After editing the file rename it by removing the .dist extension. That's all.
+We're almost done. Create a copy of the file 'config/autoload/doctrine.local.php.dist' and rename it by removing the .dist extension. Open the file and edit the line containing "'url' => 'mysql://your_username:your_password@db/database'" by replacing 'your_username' with 'root', 'your_password' and 'your_database' with the password and database name you provided during the editing of the docker-compose.yml file. After editing the file rename it by removing the .dist extension. That's all.
 
-Once the installation is finished then launch the project with this command:
+Once those configuration tricks are done launch the project with this command:
 ```bash
 docker-compose up
 ```
@@ -69,10 +69,11 @@ INSERT INTO `Entry` (`id`, `word`, `typology`, `definition`) VALUES
 Cool. At this stage we are ready to go consume the API. To retrieve a word signification your have
 to type an address like: 'http://localhost:80/api/entries/1', then you will see its definition and other metadatas displaying in json/XML (depending on what you have populated the Accept:* header with in your request). search the work 'mekan' too and see.
 
-The Api actually provide three routes:
+The Api actually provide four routes:
 - http://localhost/api/entries/id   where id is the unique identifier of an entry in the dictionary;
-- http://localhost/api/entries this route permits you to retrieve all the entries in a paginated way; Additional query (?page=5 for example) permits to select a specific page in case of numerous entries. The route can support another query (?search="mekan") for searching a specific word.
-- http://localhost (the welcome message)
+- http://localhost/api/entries this route permits you to retrieve all the entries in a paginated way; Additional query (?page=5 for example) permits to select a specific page in case of numerous entries;
+- http://localhost (the welcome message);
+- http://localhost/api/search Without any query parameter this route launches indexation process. Indexes are saved in the director 'data/search'. You need to launch the indexation process at least once in order to perform queries. To perform a word searching type something like: http://localhost/api/search?word=mekan , where 'mekan' is the word to find in the indexes. Research hits will be presented to you therefore.
 
 ## TODO
 
