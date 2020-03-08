@@ -51,8 +51,9 @@ services:
         links:
             - db
 networks:
-    app-network:
-        driver: bridge
+    default:
+        external:
+            name: app-network
 volumes:
     dbdata:
         driver: local
