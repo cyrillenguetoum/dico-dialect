@@ -31,7 +31,7 @@ class Entry implements EntryInterface, ArraySerializableInterface
      * {@inheritdoc}
      */
     public function getId(): int {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**

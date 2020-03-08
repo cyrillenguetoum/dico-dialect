@@ -7,14 +7,22 @@
  * removing factory definitions; other dependency types may be overwritten
  * when regenerating this file via mezzio-tooling commands.
  */
- 
+
 declare(strict_types=1);
 
 return [
     'dependencies' => [
         'factories' => [
+            App\Handler\CreateEntryHandler::class => App\Handler\CreateEntryHandlerFactory::class,
             App\Handler\EntryHandler::class => App\Handler\EntryHandlerFactory::class,
+            App\Handler\ModifyEntryHandler::class => App\Handler\ModifyEntryHandlerFactory::class,
             App\Handler\SearchHandler::class => App\Handler\SearchHandlerFactory::class,
+            App\Service\EntryService::class => App\Service\EntryServiceFactory::class,
+            App\Doc\InvalidParameterHandler::class => App\Doc\InvalidParameterHandlerFactory::class,
+            App\Doc\MethodNotAllowedHandler::class => App\Doc\MethodNotAllowedHandlerFactory::class,
+            App\Doc\OutOfBoundsHandler::class => App\Doc\OutOfBoundsHandlerFactory::class,
+            App\Doc\ResourceNotFoundHandler::class => App\Doc\ResourceNotFoundHandlerFactory::class,
+            App\Doc\RuntimeErrorHandler::class => App\Doc\RuntimeErrorHandlerFactory::class,
         ],
     ],
 ];

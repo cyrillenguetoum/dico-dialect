@@ -9,7 +9,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Mezzio\Hal\HalResponseFactory;
 use Mezzio\Hal\ResourceGenerator;
-use App\Repository\EntryRepository;
+use App\Service\EntryService;
 use App\RestDispatchTrait;
 
 class EntryHandler implements RequestHandlerInterface
@@ -20,11 +20,11 @@ class EntryHandler implements RequestHandlerInterface
     use RestDispatchTrait;
 
     public function __construct(
-        EntryRepository $repository,
+        EntryService $service,
         ResourceGenerator $resourceGenerator,
         HalResponseFactory $responseFactory
     ) {
-        $this->repository = $repository;
+        $this->repository = $service;
         $this->resourceGenerator = $resourceGenerator;
         $this->responseFactory = $responseFactory;
     }
