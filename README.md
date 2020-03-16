@@ -30,8 +30,7 @@ We're almost done. Create a copy of the file 'config/autoload/doctrine.local.php
 
 Now create the NAT netword(for windows users) or the Bridged Network (for linux users). Just type in the cmd line interface:
 ```bash
-docker network create app-network                   //for linux users
-docker network create --driver nat app-network      //for Windows users
+docker network create app-network
 ```
 Then finally launch all the containers with this command:
 ```bash

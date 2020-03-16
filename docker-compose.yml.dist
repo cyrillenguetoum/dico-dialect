@@ -36,8 +36,8 @@ services:
             - .docker/dbdata:/var/lib/mysql
             - .docker/db/my.cnf:/etc/mysql/my.cnf
         environment:
-            - MYSQL_DATABASE=XXXXXXXX
-            - MYSQL_ROOT_PASSWORD=XXXXXXXXXX
+            - MYSQL_DATABASE=XXXXXXXXXXX
+            - MYSQL_ROOT_PASSWORD=XXXXXXXXXXXX
         networks:
             - app-network
 
