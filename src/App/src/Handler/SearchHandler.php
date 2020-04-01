@@ -12,7 +12,7 @@ use Search\Lucene;
 use Search\Document;
 use Search\Document\Field;
 use Search\Multisearcher;
-use App\Repository\EntryRepository;
+use App\Service\EntryService;
 
 class SearchHandler implements RequestHandlerInterface
 {
@@ -20,7 +20,7 @@ class SearchHandler implements RequestHandlerInterface
 
     private $repository;
 
-    public function __construct(EntryRepository $repository)
+    public function __construct(EntryService $repository)
     {
         $this->repository = $repository;
     }

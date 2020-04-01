@@ -15,6 +15,7 @@ use Mezzio\Router\Middleware\MethodNotAllowedMiddleware;
 use Mezzio\Router\Middleware\RouteMiddleware;
 use Mezzio\ProblemDetails\ProblemDetailsMiddleware;
 use Psr\Container\ContainerInterface;
+use Tuupola\Middleware\CorsMiddleware;
 
 /**
  * Setup middleware pipeline:
@@ -55,7 +56,11 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     // Order here matters; the MethodNotAllowedMiddleware should be placed
     // after the Implicit*Middleware.
     $app->pipe(ImplicitHeadMiddleware::class);
-    $app->pipe(ImplicitOptionsMiddleware::class);
+    //$app->pipe(ImplicitOptionsMiddleware::class);
+    $app->pipe(new CorsMiddleware([
+        "origin" => ["*"],
+        "headers.allow" => ["ApplicationNames", "Content-Type", "Origin", "Authorization", "Accept"],
+    ]));
     $app->pipe(MethodNotAllowedMiddleware::class);
 
     // Seed the UrlHelper with the routing results:

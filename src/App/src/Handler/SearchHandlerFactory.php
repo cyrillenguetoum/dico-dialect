@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace App\Handler;
 
 use Psr\Container\ContainerInterface;
-use App\Repository\EntryRepository;
+use App\Service\EntryService;
 
 class SearchHandlerFactory
 {
     public function __invoke(ContainerInterface $container) : SearchHandler
     {
-        return new SearchHandler($container->get(EntryRepository::class));
+        return new SearchHandler($container->get(EntryService::class));
     }
 }
