@@ -2,12 +2,12 @@
 
 *Learning Cameroonian languages easily*
 
-# Description
+## Description
 
 Dico-Dialect builds on [mezzio](https://github.com/mezzio/mezzio) PHP framework to provide a minimalist
 API back-end solution to search words in the local languages of Cameroon, translate them, and provide a vocabulary trainer.
 
-# Why this project?
+## Why this project?
 
 Some ex-African Colonies have adopted European languages as national languages. As a result, only the national language 
 is taught in schools, while the local languages are gradually disappearing. Local languages are important vectors of culture for 
@@ -15,7 +15,7 @@ those countries and losing them is equivalent to losing a part of African identi
 preserve languages threatened with extinction. The project focuses on building an infrastructure for one language that will later be used 
 to implement other languages.
 
-# Getting started
+## Getting started
 
 Clone the project into your computer by typing in your cmd line interface:
 ```bash
@@ -38,14 +38,14 @@ Then finally launch all the containers with this command:
 ```bash
 docker-compose up
 ```
-> ## Testing
+> ### Testing
 > You could type 'docker-compose up -d' if you don't want to check the verbose output.
 > Once the launching process is completed, open your browser and visit 'http://localhost:8080' to verify
 > that everything worked as expected. You should see the UI of Adminer a well known alternative to
 > PHPmyAdmin for administering databases. The URL of our API is located at 'http://localhost:80',
 > but don't consult it for now since we need additional configuration for everything to work properly.
 
-## Configuring the database
+### Configuring the database
 
 Navigate with the browser to the 'http://localhost:8080' adminer's interface. You could log in by using the credentials you provided during the configuration of the docker-compose.yml file. When logged in, select the database created by docker-compose and click on the 'SQL Command' button to populate the database with table and test data. Then paste into the textarea the following text:
 
@@ -74,7 +74,7 @@ INSERT INTO `Entry` (`id`, `word`, `typology`, `definition`) VALUES
 (8,	'metua',	'n.c., sing.',	'Marche, Activite de vente, Lieu d\'un marche');
 ```
 
-# Usage
+## Usage
 
 Cool. At this stage, we are ready to consume the API.
 Initialize the search index by visiting the URL: http://localhost:80/api/search .
@@ -87,7 +87,7 @@ The API actually provides four routes, with some of them supporting many request
 - http://localhost (the welcome message);
 - http://localhost/api/search Without any query parameter this route launches indexation process. Indexes are saved in the director 'data/search'. You need to launch the indexation process at least once in order to perform queries. To perform a word searching type something like: http://localhost/api/search?word=mekan , where 'mekan' is the word to find in the indexes. Research hits will be presented to you, therefore.
 
-# Contributing
+## Contributing
 
 - We need to populate the database with data;
 - Develop a front-end solution to consume this API (desktop apps, mobile apps, or webpage);
